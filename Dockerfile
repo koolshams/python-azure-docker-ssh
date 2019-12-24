@@ -33,4 +33,4 @@ RUN echo "root:Docker!" | chpasswd
 EXPOSE 8000 2222
 
 # We give the container the main command to run
-CMD mkdir /var/run/sshd && chmod 0755 /var/run/sshd && /usr/sbin/sshd ; python sample.py
+CMD mkdir /var/run/sshd && chmod 0755 /var/run/sshd && /usr/sbin/sshd ; gunicorn sample:app
